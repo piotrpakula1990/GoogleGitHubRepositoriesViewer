@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_view_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_horizontal"
+            android:textColor="@color/header"
+            android:typeface="serif"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:shadowColor="@color/header"
+            android:textSize="@dimen/repo_list_text_size" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/description"
+            android:textSize="@dimen/repo_list_text_size" />
+
+        <LinearLayout
+            android:id="@+id/components"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/description"
+            android:layout_alignParentStart="true" >
+
+                <ImageView
+                    android:id="@+id/language_icon"
+                    android:layout_width="@dimen/repo_list_language_icon_size"
+                    android:layout_height="@dimen/repo_list_language_icon_size"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp" />
+
+                <TextView
+                    android:id="@+id/language"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/repo_list_text_size" />
+
+                <ImageView
+                    android:id="@+id/star_icon"
+                    android:src="@drawable/star"
+                    android:layout_width="@dimen/repo_list_default_icon_size"
+                    android:layout_height="@dimen/repo_list_default_icon_size"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp" />
+
+                <TextView
+                    android:id="@+id/stargazers_count"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/repo_list_text_size" />
+
+                <ImageView
+                    android:id="@+id/fork_icon"
+                    android:src="@drawable/fork"
+                    android:layout_width="@dimen/repo_list_default_icon_size"
+                    android:layout_height="@dimen/repo_list_default_icon_size"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp" />
+
+                <TextView
+                    android:id="@+id/forks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/repo_list_text_size" />
+
+        </LinearLayout>
+</RelativeLayout>
