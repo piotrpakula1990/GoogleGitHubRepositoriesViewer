@@ -1,0 +1,17 @@
+<resources>
+    <dimen name="activity_margin">4dp</dimen>
+    <dimen name="progress_bar_top_margin">20dp</dimen>
+
+    <dimen name="details_components_margin">10dp</dimen>
+    <dimen name="details_icon_size">26dp</dimen>
+    <dimen name="details_header_text_size">20sp</dimen>
+    <dimen name="details_description_text_size">18sp</dimen>
+    <dimen name="details_components_text_size">20sp</dimen>
+
+    <dimen name="repo_list_language_icon_size">13dp</dimen>
+    <dimen name="repo_list_default_icon_size">16dp</dimen>
+    <dimen name="repo_list_text_size">14sp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GoogleGitHubRepositoriesViewer</string>
+    <string name="title_activity_details">DetailsActivity</string>
+    <string name="repo_key">repo</string>
+    <string name="on_failure_message">Unable to get repositories</string>
+
+
+
+
+</resources>
