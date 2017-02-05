@@ -17,6 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 import piotrpakula.googlegithubrepositoriesviewer.R;
 import piotrpakula.googlegithubrepositoriesviewer.model.Repo;
+import piotrpakula.googlegithubrepositoriesviewer.utils.RepositoriesUtils;
 import piotrpakula.googlegithubrepositoriesviewer.service.GitHubService;
 import piotrpakula.googlegithubrepositoriesviewer.service.RestClient;
 import piotrpakula.googlegithubrepositoriesviewer.view.component.RepoViewAdapter;
@@ -38,6 +39,18 @@ public class RepositoriesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_repositories);
         ButterKnife.bind(this);
         asynchronousCallGitHub();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        RepositoriesUtils.build();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        RepositoriesUtils.destroy();
     }
 
     @OnItemClick(R.id.repositories_list)

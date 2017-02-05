@@ -16,11 +16,22 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import piotrpakula.googlegithubrepositoriesviewer.R;
 import piotrpakula.googlegithubrepositoriesviewer.model.Repo;
+import piotrpakula.googlegithubrepositoriesviewer.utils.RepositoriesUtils;
 
 public class RepoViewAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private List<Repo> listRepositories;
+
+//    private static final Map<String, Integer> iconsId = new HashMap<>();
+//    static {
+//        iconsId.put("Java", R.drawable.blue_circle);
+//        iconsId.put("C", R.drawable.green_circle);
+//        iconsId.put("JavaScript", R.drawable.orange_circle);
+//        iconsId.put("Python", R.drawable.pink_circle);
+//        iconsId.put("Go", R.drawable.purple_circle);
+//        iconsId.put("HTML", R.drawable.red_circle);
+//    }
 
     public RepoViewAdapter(LayoutInflater inflater, List<Repo> listRepositories){
         this.inflater = inflater;
@@ -82,26 +93,12 @@ public class RepoViewAdapter extends BaseAdapter {
         }
 
         private Drawable getLanguageIcon(Repo repo) {
-            if(repo.getLanguage() == null) {
-                return getResourceDrawable(R.drawable.yellow_circle);
-            } else if (repo.getLanguage().equals("Java")) {
-                return getResourceDrawable(R.drawable.blue_circle);
-            } else if (repo.getLanguage().equals("C#")) {
-                return getResourceDrawable(R.drawable.green_circle);
-            } else if (repo.getLanguage().equals("JavaScript")) {
-                return getResourceDrawable(R.drawable.orange_circle);
-            } else if (repo.getLanguage().equals("Python")) {
-                return getResourceDrawable(R.drawable.pink_circle);
-            } else if (repo.getLanguage().equals("Go")) {
-                return getResourceDrawable(R.drawable.purple_circle);
-            } else if (repo.getLanguage().equals("HTML")) {
-                return getResourceDrawable(R.drawable.red_circle);
-            } else {
-                return getResourceDrawable(R.drawable.yellow_circle);
-            }
+            return (RepositoriesUtils.iconsId.get(repo.getLanguage()) == null)
+                    ? getResourceDrawable(R.drawable.yellow_circle) //default
+                    : getResourceDrawable(RepositoriesUtils.iconsId.get(repo.getLanguage()));
         }
 
-        private Drawable getResourceDrawable(int drawableId) {
+        private Drawable getResourceDrawable(Integer drawableId) {
             return ResourcesCompat.getDrawable(context.getResources(), drawableId, null);
         }
     }
