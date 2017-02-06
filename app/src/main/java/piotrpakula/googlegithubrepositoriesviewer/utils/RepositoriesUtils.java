@@ -14,7 +14,7 @@ public class RepositoriesUtils {
     }
 
     public static void destroy() {
-        destroyiconsId();
+        destroyIconsId();
     }
 
     private static void buildIconsId(){
@@ -27,7 +27,7 @@ public class RepositoriesUtils {
         iconsId.put("HTML", R.drawable.red_circle);
     }
 
-    private static void destroyiconsId() {
+    private static void destroyIconsId() {
         iconsId = null;
     }
 }

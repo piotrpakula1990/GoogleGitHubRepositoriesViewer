@@ -3,6 +3,8 @@ package piotrpakula.googlegithubrepositoriesviewer.view.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+import android.widget.ImageView;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -19,17 +21,18 @@ public class DetailsActivity extends AppCompatActivity {
     @BindView(R.id.details_watchers_count) TextView watchers;
     @BindView(R.id.details_stars_count) TextView stars;
     @BindView(R.id.details_forks_count) TextView forks;
+    @BindView(R.id.details_avatar) ImageView avatar;
 
     @BindString(R.string.repo_key) String REPO_KEY;
 
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_details);
-            ButterKnife.bind(this);
-            repo = (Repo) getIntent().getSerializableExtra(REPO_KEY);
-            updateWith(repo);
-        }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_details);
+        ButterKnife.bind(this);
+        repo = (Repo) getIntent().getSerializableExtra(REPO_KEY);
+        updateWith(repo);
+    }
 
     private void updateWith(Repo repo) {
         fullName.setText(repo.getFullName());
@@ -37,5 +40,6 @@ public class DetailsActivity extends AppCompatActivity {
         watchers.setText(String.valueOf(repo.getWatchersCount()));
         stars.setText(String.valueOf(repo.getStargazersCount()));
         forks.setText(String.valueOf(repo.getForks()));
+        Picasso.with(this).load(repo.getAvatarUrl()).into(avatar);
     }
 }

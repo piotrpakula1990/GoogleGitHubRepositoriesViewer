@@ -54,6 +54,7 @@ public class Repo implements Serializable{
 
         @SerializedName("followers_url")
         private String followersUrl;
+
     }
 
     @SerializedName("has_issues")
@@ -792,4 +793,9 @@ public class Repo implements Serializable{
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
+    public String getAvatarUrl() {
+        return owner.avatarUrl;
+    }
+
 }

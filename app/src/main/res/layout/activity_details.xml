@@ -95,4 +95,12 @@
         android:layout_toEndOf="@+id/details_image_fork"
         android:textSize="@dimen/details_components_text_size" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:color/background_light"
+        android:layout_below="@+id/details_image_fork"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/details_avatar" />
+
 </RelativeLayout>

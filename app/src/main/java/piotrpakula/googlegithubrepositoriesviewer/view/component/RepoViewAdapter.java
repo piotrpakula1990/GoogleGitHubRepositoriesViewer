@@ -23,16 +23,6 @@ public class RepoViewAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<Repo> listRepositories;
 
-//    private static final Map<String, Integer> iconsId = new HashMap<>();
-//    static {
-//        iconsId.put("Java", R.drawable.blue_circle);
-//        iconsId.put("C", R.drawable.green_circle);
-//        iconsId.put("JavaScript", R.drawable.orange_circle);
-//        iconsId.put("Python", R.drawable.pink_circle);
-//        iconsId.put("Go", R.drawable.purple_circle);
-//        iconsId.put("HTML", R.drawable.red_circle);
-//    }
-
     public RepoViewAdapter(LayoutInflater inflater, List<Repo> listRepositories){
         this.inflater = inflater;
         this.listRepositories = listRepositories;
@@ -58,7 +48,7 @@ public class RepoViewAdapter extends BaseAdapter {
         if (view != null) {
             holder = (ViewHolder) view.getTag();
         } else {
-            view = inflater.inflate(R.layout.repo_list_layout, parent, false);
+            view = inflater.inflate(R.layout.item_repository, parent, false);
             holder = new ViewHolder(view);
             view.setTag(holder);
         }
